@@ -1,0 +1,26 @@
+{
+  "name": "zipdrug-session-store",
+  "version": "1.0.0",
+  "description": "A store that manages the session lifecycle",
+  "main": "lib/index.js",
+  "files": [
+    "lib/"
+  ],
+  "scripts": {
+    "build": "babel src --out-dir lib",
+    "build:watch": "npm run build -- -w",
+    "prepublish": "npm run build"
+  },
+  "dependencies": {
+    "immutability-helper": "^2.0.0",
+    "redux": "^3.6.0",
+    "redux-actions": "^1.1.0",
+    "redux-persist": "^4.0.0-beta1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-plugin-transform-class-properties": "^6.19.0",
+    "babel-plugin-transform-object-rest-spread": "^6.19.0",
+    "babel-preset-es2015": "^6.18.0"
+  }
+}
