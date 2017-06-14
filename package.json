@@ -1,6 +1,6 @@
 {
   "name": "zipdrug-session-store",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A store that manages the session lifecycle",
   "main": "lib/index.js",
   "files": [
