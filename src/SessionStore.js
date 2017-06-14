@@ -51,7 +51,7 @@ export default class SessionStore {
   }
 
   _handleHydrate = () => {
-    this.getStore().dispatch(session.setReady());
+    this.store.dispatch(session.setReady());
   }
 
   _persist(options) {
@@ -80,5 +80,17 @@ export default class SessionStore {
 
   getStore() {
     return this.store;
+  }
+
+  observeTokenChange({ onNext }) {
+    let token = this.getToken();
+    let dispose = this.store.subscribe(() => {
+      const nextToken = this.getToken();
+      if (token !== nextToken) {
+        token = nextToken;
+        onNext(token);
+      }
+    });
+    return { dispose };
   }
 }
