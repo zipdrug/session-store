@@ -34,7 +34,7 @@ export default class SessionStore {
         // Reset the store after "reset"" is dispatched.
         // Wrap in a setTimeout to prevent redux from complaining
         // that we dispatched within a reducer.
-        onReset: () => setTimeout(this.reset, 0),
+        onReset: () => setTimeout(this._reset, 0),
       }),
     })
 
